@@ -58,7 +58,7 @@ namespace filestest
             this.button2.Location = new System.Drawing.Point(38, 124);
             this.button2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 46);
+            this.button2.Size = new System.Drawing.Size(191, 46);
             this.button2.TabIndex = 2;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
