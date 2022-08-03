@@ -36,9 +36,10 @@ namespace filestest
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(96, 74);
+            this.button1.Location = new System.Drawing.Point(38, 30);
+            this.button1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(221, 98);
+            this.button1.Size = new System.Drawing.Size(88, 39);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -46,16 +47,18 @@ namespace filestest
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(84, 219);
+            this.textBox1.Location = new System.Drawing.Point(34, 88);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(610, 42);
+            this.textBox1.Size = new System.Drawing.Size(246, 21);
             this.textBox1.TabIndex = 1;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(96, 309);
+            this.button2.Location = new System.Drawing.Point(38, 124);
+            this.button2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(259, 41);
+            this.button2.Size = new System.Drawing.Size(194, 32);
             this.button2.TabIndex = 2;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
@@ -63,12 +66,13 @@ namespace filestest
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(320, 180);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
