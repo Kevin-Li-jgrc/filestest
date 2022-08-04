@@ -37,7 +37,7 @@ namespace filestest
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(38, 30);
-            this.button1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.button1.Margin = new System.Windows.Forms.Padding(1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 39);
             this.button1.TabIndex = 0;
@@ -48,7 +48,7 @@ namespace filestest
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(34, 88);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(1);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(246, 21);
             this.textBox1.TabIndex = 1;
@@ -56,9 +56,9 @@ namespace filestest
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(38, 124);
-            this.button2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.button2.Margin = new System.Windows.Forms.Padding(1);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(242, 46);
+            this.button2.Size = new System.Drawing.Size(157, 46);
             this.button2.TabIndex = 2;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
@@ -72,7 +72,7 @@ namespace filestest
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
