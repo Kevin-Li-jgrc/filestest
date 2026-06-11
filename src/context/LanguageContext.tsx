@@ -1,44 +1,31 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { createContext, useContext, useEffect, ReactNode } from "react";
 
-type Locale = "en" | "zh";
+export type Locale = "en" | "zh";
 
-interface LanguageContextType {
+const LanguageContext = createContext<Locale>("en");
+
+// Locale is determined by the route (/ = en, /zh/ = zh) so both languages
+// exist as static HTML for search engines — no client-side language state.
+export function LanguageProvider({
+  locale,
+  children,
+}: {
   locale: Locale;
-  setLocale: (locale: Locale) => void;
-}
-
-const LanguageContext = createContext<LanguageContextType>({
-  locale: "en",
-  setLocale: () => {},
-});
-
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("en");
-
+  children: ReactNode;
+}) {
   useEffect(() => {
-    const stored = localStorage.getItem("locale") as Locale | null;
-    if (stored === "en" || stored === "zh") {
-      setLocaleState(stored);
-    } else if (navigator.language.startsWith("zh")) {
-      setLocaleState("zh");
-    }
-  }, []);
-
-  const setLocale = (l: Locale) => {
-    setLocaleState(l);
-    localStorage.setItem("locale", l);
-    document.documentElement.lang = l === "zh" ? "zh-CN" : "en";
-  };
+    document.documentElement.lang = locale === "zh" ? "zh-CN" : "en";
+  }, [locale]);
 
   return (
-    <LanguageContext.Provider value={{ locale, setLocale }}>
+    <LanguageContext.Provider value={locale}>
       {children}
     </LanguageContext.Provider>
   );
 }
 
 export function useLanguage() {
-  return useContext(LanguageContext);
+  return { locale: useContext(LanguageContext) };
 }

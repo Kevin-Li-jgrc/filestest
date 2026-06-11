@@ -4,7 +4,7 @@ A modern landing website for customized personal AI Agent tools, built with Next
 
 ## Features
 
-- Bilingual support (English / 中文)
+- Bilingual routes for SEO (`/` English, `/zh/` 中文)
 - Dark-mode-first design
 - Responsive layout (mobile + desktop)
 - Static export — deployable to any CDN or GitHub Pages

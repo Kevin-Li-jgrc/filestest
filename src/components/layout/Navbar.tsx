@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useScrollY } from "@/hooks/useScrollProgress";
 import { useLanguage } from "@/context/LanguageContext";
 import { t } from "@/lib/i18n";
+import { mailto } from "@/lib/site";
 import LanguageToggle from "@/components/ui/LanguageToggle";
 import Button from "@/components/ui/Button";
 import { clsx } from "clsx";
@@ -63,7 +64,7 @@ export default function Navbar() {
         {/* Right */}
         <div className="hidden md:flex items-center gap-3">
           <LanguageToggle />
-          <Button size="sm" href="#cta">{t("nav.cta", locale)}</Button>
+          <Button size="sm" href={mailto("AgentForge Early Access")}>{t("nav.cta", locale)}</Button>
         </div>
 
         {/* Mobile Hamburger */}
@@ -71,6 +72,8 @@ export default function Navbar() {
           className="md:hidden text-[#94a3b8] hover:text-[#f1f5f9] p-2 cursor-pointer"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
         >
           <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
             {menuOpen ? (
@@ -84,7 +87,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#111118] border-b border-[#1e1e2e] px-6 py-4 flex flex-col gap-4">
+        <div id="mobile-menu" className="md:hidden bg-[#111118] border-b border-[#1e1e2e] px-6 py-4 flex flex-col gap-4">
           {navLinks.map((link) => (
             <a
               key={link.key}
@@ -97,7 +100,7 @@ export default function Navbar() {
           ))}
           <div className="flex items-center gap-3 pt-2 border-t border-[#1e1e2e]">
             <LanguageToggle />
-            <Button size="sm" href="#cta">{t("nav.cta", locale)}</Button>
+            <Button size="sm" href={mailto("AgentForge Early Access")}>{t("nav.cta", locale)}</Button>
           </div>
         </div>
       )}

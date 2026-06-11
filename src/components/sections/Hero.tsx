@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import { t } from "@/lib/i18n";
 import { fadeUp, fadeIn, staggerContainer } from "@/lib/motion";
+import { mailto } from "@/lib/site";
 import Button from "@/components/ui/Button";
 import Badge from "@/components/ui/Badge";
 import GradientText from "@/components/ui/GradientText";
@@ -64,16 +65,13 @@ export default function Hero() {
             </motion.p>
 
             <motion.div variants={fadeUp} className="flex flex-wrap gap-4 pt-2">
-              <Button size="lg" href="#cta">
+              <Button size="lg" href={mailto("AgentForge Early Access")}>
                 {t("hero.cta.primary", locale)}
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </Button>
-              <Button variant="outline" size="lg" href="#">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm-1.5 11.5v-7l5 3.5-5 3.5z" />
-                </svg>
+              <Button variant="outline" size="lg" href="#how-it-works">
                 {t("hero.cta.secondary", locale)}
               </Button>
             </motion.div>
@@ -107,25 +105,6 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Stats */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          animate="visible"
-          className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-[#1e1e2e] pt-12"
-        >
-          {[
-            { value: "2,400+", label: locale === "zh" ? "活跃构建者" : "Active Builders" },
-            { value: "50+", label: locale === "zh" ? "内置集成" : "Built-in Integrations" },
-            { value: "99.9%", label: locale === "zh" ? "正常运行率" : "Uptime SLA" },
-            { value: "< 200ms", label: locale === "zh" ? "平均响应时间" : "Avg Response Time" },
-          ].map((stat) => (
-            <motion.div key={stat.label} variants={fadeUp} className="text-center">
-              <div className="text-3xl font-bold text-[#f1f5f9] mb-1">{stat.value}</div>
-              <div className="text-sm text-[#64748b]">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

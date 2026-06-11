@@ -1,32 +1,23 @@
 "use client";
 
+import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function LanguageToggle() {
-  const { locale, setLocale } = useLanguage();
+  const { locale } = useLanguage();
+
+  const base = "px-3 py-1 rounded-md text-xs font-semibold transition-all duration-200";
+  const active = "bg-[#6366f1] text-white";
+  const inactive = "text-[#94a3b8] hover:text-[#f1f5f9]";
 
   return (
     <div className="flex items-center gap-1 bg-white/5 border border-white/10 rounded-lg p-1">
-      <button
-        onClick={() => setLocale("en")}
-        className={`px-3 py-1 rounded-md text-xs font-semibold transition-all duration-200 cursor-pointer ${
-          locale === "en"
-            ? "bg-[#6366f1] text-white"
-            : "text-[#94a3b8] hover:text-[#f1f5f9]"
-        }`}
-      >
+      <Link href="/" className={`${base} ${locale === "en" ? active : inactive}`}>
         EN
-      </button>
-      <button
-        onClick={() => setLocale("zh")}
-        className={`px-3 py-1 rounded-md text-xs font-semibold transition-all duration-200 cursor-pointer ${
-          locale === "zh"
-            ? "bg-[#6366f1] text-white"
-            : "text-[#94a3b8] hover:text-[#f1f5f9]"
-        }`}
-      >
+      </Link>
+      <Link href="/zh" className={`${base} ${locale === "zh" ? active : inactive}`}>
         中文
-      </button>
+      </Link>
     </div>
   );
 }

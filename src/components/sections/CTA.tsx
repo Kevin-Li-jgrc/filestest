@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import { t } from "@/lib/i18n";
 import { fadeUp, staggerContainer } from "@/lib/motion";
+import { mailto } from "@/lib/site";
 import Button from "@/components/ui/Button";
 
 export default function CTA() {
@@ -48,29 +49,15 @@ export default function CTA() {
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-wrap gap-4 justify-center">
-            <Button size="lg" href="#">
+            <Button size="lg" href={mailto("AgentForge Early Access")}>
               {t("cta.primary", locale)}
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Button>
-            <Button variant="outline" size="lg" href="#">
+            <Button variant="outline" size="lg" href={mailto("AgentForge Sales Inquiry")}>
               {t("cta.secondary", locale)}
             </Button>
-          </motion.div>
-
-          {/* Trust badges */}
-          <motion.div variants={fadeUp} className="flex flex-wrap items-center justify-center gap-6 mt-12">
-            {[
-              { icon: "🔒", label: { en: "SOC 2 Compliant", zh: "符合 SOC 2 标准" } },
-              { icon: "🌍", label: { en: "GDPR Ready", zh: "符合 GDPR 规定" } },
-              { icon: "⚡", label: { en: "99.9% Uptime", zh: "99.9% 正常运行率" } },
-            ].map((badge) => (
-              <div key={badge.label.en} className="flex items-center gap-2 text-sm text-[#64748b]">
-                <span>{badge.icon}</span>
-                <span>{locale === "zh" ? badge.label.zh : badge.label.en}</span>
-              </div>
-            ))}
           </motion.div>
         </motion.div>
       </div>

@@ -92,6 +92,17 @@ body {
   box-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+  .animate-gradient,
+  .animate-float,
+  .animate-dash {
+    animation: none;
+  }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

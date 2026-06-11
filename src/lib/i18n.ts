@@ -13,7 +13,7 @@ const strings: I18nMap = {
   "nav.cta": { en: "Get Early Access", zh: "立即体验" },
 
   // Hero
-  "hero.badge": { en: "Now in Beta — Join 2,400+ builders", zh: "公测中 — 已有 2,400+ 开发者加入" },
+  "hero.badge": { en: "Now in Beta — Early access open", zh: "公测中 — 抢先体验开放" },
   "hero.headline1": { en: "Build Your Own", zh: "打造你的" },
   "hero.headline2": { en: "AI Agent.", zh: "专属 AI Agent。" },
   "hero.headline3": { en: "No Code Required.", zh: "无需代码。" },
@@ -22,7 +22,7 @@ const strings: I18nMap = {
     zh: "定制专属 AI Agent，适配你的工作流程。从研究助手到客服机器人，几分钟内即可上线运行。",
   },
   "hero.cta.primary": { en: "Start Building Free", zh: "免费开始构建" },
-  "hero.cta.secondary": { en: "Watch Demo", zh: "观看演示" },
+  "hero.cta.secondary": { en: "See How It Works", zh: "了解使用流程" },
   "hero.compatible": { en: "Works with your stack", zh: "兼容主流工具" },
 
   // Features
@@ -35,7 +35,7 @@ const strings: I18nMap = {
   "features.1.title": { en: "Custom Persona", zh: "自定义人格" },
   "features.1.desc": { en: "Give your agent a name, tone, and domain expertise. Define its personality and knowledge boundaries.", zh: "为 Agent 设定名称、语气和领域知识，定义其个性与能力边界。" },
   "features.2.title": { en: "Tool Integration", zh: "工具集成" },
-  "features.2.desc": { en: "Connect to 50+ APIs including web search, code execution, databases, and custom webhooks.", zh: "接入 50+ API，包括网络搜索、代码执行、数据库和自定义 Webhook。" },
+  "features.2.desc": { en: "Connect to web search, code execution, databases, and custom webhooks.", zh: "接入网络搜索、代码执行、数据库和自定义 Webhook 等工具。" },
   "features.3.title": { en: "Persistent Memory", zh: "持久记忆" },
   "features.3.desc": { en: "Your agent remembers context across sessions. Build relationships and retain important information over time.", zh: "Agent 跨会话记忆上下文，随时间积累关系与知识。" },
   "features.4.title": { en: "Multi-Agent Orchestration", zh: "多 Agent 编排" },
@@ -139,8 +139,8 @@ const strings: I18nMap = {
   // CTA
   "cta.title": { en: "Ready to build your first agent?", zh: "准备好构建你的第一个 Agent 了吗？" },
   "cta.subtitle": {
-    en: "Join thousands of builders already automating their work with AgentForge. Start free, upgrade anytime.",
-    zh: "加入数千名已在使用 AgentForge 自动化工作的构建者。免费开始，随时升级。",
+    en: "Create your first custom agent today and automate the repetitive parts of your work. Start free, upgrade anytime.",
+    zh: "立即创建你的第一个定制 Agent，把重复性工作交给自动化。免费开始，随时升级。",
   },
   "cta.primary": { en: "Start Building Free", zh: "免费开始构建" },
   "cta.secondary": { en: "Talk to Sales", zh: "联系销售" },

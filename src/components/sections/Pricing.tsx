@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import { t } from "@/lib/i18n";
 import { fadeUp, staggerContainer } from "@/lib/motion";
+import { mailto } from "@/lib/site";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 
@@ -32,7 +33,7 @@ const tiers = [
       { en: "10 Agents", zh: "10 个 Agent" },
       { en: "50,000 API calls/mo", zh: "每月 50,000 次 API 调用" },
       { en: "90-day memory", zh: "90 天记忆存储" },
-      { en: "All 50+ integrations", zh: "全部 50+ 集成" },
+      { en: "All integrations", zh: "全部集成" },
       { en: "Email support", zh: "邮件支持" },
       { en: "Custom personas", zh: "自定义人格" },
       { en: "Priority inference", zh: "优先推理" },
@@ -122,7 +123,7 @@ export default function Pricing() {
           viewport={{ once: true, margin: "-80px" }}
           className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start"
         >
-          {tiers.map((tier, i) => (
+          {tiers.map((tier) => (
             <motion.div
               key={tier.key}
               variants={fadeUp}
@@ -175,7 +176,15 @@ export default function Pricing() {
               </ul>
 
               {/* CTA */}
-              <Button variant={tier.ctaVariant} href="#cta" className="w-full justify-center">
+              <Button
+                variant={tier.ctaVariant}
+                href={mailto(
+                  tier.key === "enterprise"
+                    ? "AgentForge Enterprise Inquiry"
+                    : `AgentForge Early Access (${tier.key})`
+                )}
+                className="w-full justify-center"
+              >
                 {t(tier.cta, locale)}
               </Button>
             </motion.div>
